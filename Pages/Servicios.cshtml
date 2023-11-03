@@ -1,0 +1,36 @@
+﻿@page
+@model EmpresaAlkemyServicios.Pages.ServiciosModel
+@{
+    ViewData["Title"] = "Servicios";
+}
+<h1>Servicios</h1>
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <button type="button" class="btn btn-primary">Crear Servicio</button>
+        @foreach (var servicio in Model.Servicios)
+        {
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        @if (Model.Servicios.Count() > 0)
+                        {
+                            <h5 class="card-tittle">Descripcion: @servicio.Descripcion</h5>
+                            <p class="card-text">Valor de la hora: @servicio.ValorHora</p>
+                            <p class="card-text">Estado: @servicio.Estado</p>
+                            <button type="button" class="btn btn-primary btn-xs">Editar</button>
+                            <button type="button" class="btn btn-danger btn-xs">Eliminar</button>
+                        }
+                        else
+                        {
+                            <p> No hay Data</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@page
+@model EmpresaAlkemyServicios.Pages.ProyectosModel
+@{
+ViewData["Title"] = "Proyectos";
+} 
+<h1>Proyectos</h1>
+
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <button type="button" class="btn btn-success">
+            <a class="text-dark" asp-page="/CrearProyecto">Crear Proyecto</a>
+        </button>
+        @foreach (var proyecto in Model.Proyectos)
+        {
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        @if (Model.Proyectos.Count() > 0)
+                        {
+                            <h5 class="card-tittle">Nombre: @proyecto.Nombre</h5>
+                            <p class="card-text">Dirección: @proyecto.Direccion</p>
+                            <p class="card-text">Estado: @proyecto.Estado</p>
+                            <button type="button" class="btn btn-primary btn-xs">Editar</button>
+                            <button type="button" class="btn btn-danger btn-xs">Eliminar</button>
+                        }
+                        else
+                        {
+                            <p> No hay Data</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
